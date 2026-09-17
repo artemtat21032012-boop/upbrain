@@ -702,3 +702,38 @@ text-align:center;
 color:#8c8fa8;
 
 }
+.item{
+
+
+background:#151126;
+
+border-radius:15px;
+
+padding:15px;
+
+margin:10px 0;
+
+
+}
+
+
+
+.item button{
+
+
+background:#713cff;
+
+border:none;
+
+color:white;
+
+padding:10px 20px;
+
+border-radius:12px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+
+}
