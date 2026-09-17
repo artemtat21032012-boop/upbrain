@@ -21,7 +21,8 @@
 <div class="app">
 
 
-<!-- СТРАНИЦА КЕЙСОВ -->
+<!-- ================= КЕЙСЫ ================= -->
+
 
 <div class="cases-page">
 
@@ -58,7 +59,7 @@
 <h3>Lucky Case</h3>
 
 <div class="price">
-🪙 49
+🪙49
 </div>
 
 </div>
@@ -73,7 +74,7 @@
 <h3>Crazy Case</h3>
 
 <div class="price">
-🪙 79
+🪙79
 </div>
 
 </div>
@@ -89,7 +90,7 @@
 <h3>Mystery Case</h3>
 
 <div class="price">
-🪙 99
+🪙99
 </div>
 
 </div>
@@ -172,24 +173,30 @@
 
 
 
+<!-- ================= ОТКРЫТИЕ КЕЙСА ================= -->
 
-<!-- ОТКРЫТИЕ -->
 
 <div class="open-page">
 
 
-<button class="back-btn" onclick="backCases()">
+<button class="back-btn" onclick="goCases()">
+
 ← Вернуться к кейсам
+
 </button>
+
 
 
 <h1 class="case-title"></h1>
 
 
+
 <img class="open-image">
 
 
+
 <div class="open-price"></div>
+
 
 
 
@@ -206,6 +213,48 @@
 </div>
 
 
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ================= АПГРЕЙДЕР ================= -->
+
+
+<div class="upgrade-page">
+
+
+<div class="top">
+
+<div class="logo">
+🧠 BrainUp
+</div>
+
+
+<div class="coins">
+🪙500
+</div>
+
+</div>
+
+
+
+<h1>
+⚡ Апгрейдер
+</h1>
+
+
+<div class="empty-page">
+
+Скоро здесь будет апгрейдер 🚀
+
+</div>
+
 
 </div>
 
@@ -216,12 +265,56 @@
 
 
 
-<!-- МЕНЮ -->
+
+<!-- ================= ПРОФИЛЬ ================= -->
+
+
+<div class="profile-page">
+
+
+<div class="top">
+
+<div class="logo">
+🧠 BrainUp
+</div>
+
+
+<div class="coins">
+🪙500
+</div>
+
+</div>
+
+
+
+<h1>
+👤 Профиль
+</h1>
+
+
+<div class="empty-page">
+
+Скоро здесь будет профиль 👤
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- ================= НИЖНЕЕ МЕНЮ ================= -->
+
 
 <div class="bottom-menu">
 
 
-<div class="menu active">
+<div class="menu active" onclick="goCases()">
 
 🎁
 
@@ -233,7 +326,7 @@
 
 
 
-<div class="menu">
+<div class="menu" onclick="goUpgrade()">
 
 ⚡
 
@@ -246,7 +339,7 @@
 
 
 
-<div class="menu">
+<div class="menu" onclick="goProfile()">
 
 👤
 
@@ -263,7 +356,9 @@
 
 
 
+
 </div>
+
 
 
 
@@ -276,21 +371,60 @@ Telegram.WebApp.expand();
 
 
 
-let currentCase="";
+function hideAll(){
+
+
+document.querySelector(".cases-page").style.display="none";
+
+document.querySelector(".open-page").style.display="none";
+
+document.querySelector(".upgrade-page").style.display="none";
+
+document.querySelector(".profile-page").style.display="none";
+
+
+}
+
+
+
+function goCases(){
+
+hideAll();
+
+document.querySelector(".cases-page").style.display="block";
+
+}
+
+
+
+function goUpgrade(){
+
+hideAll();
+
+document.querySelector(".upgrade-page").style.display="block";
+
+}
+
+
+
+function goProfile(){
+
+hideAll();
+
+document.querySelector(".profile-page").style.display="block";
+
+}
+
 
 
 
 function openCasePage(name,image,price){
 
 
-currentCase=name;
-
-
-document.querySelector(".cases-page").style.display="none";
+hideAll();
 
 
 document.querySelector(".open-page").style.display="block";
-
 
 
 document.querySelector(".case-title").innerText=name;
@@ -300,27 +434,11 @@ document.querySelector(".open-image").src=image;
 
 
 document.querySelector(".open-price").innerHTML=
+
 "🪙 Цена открытия: "+price;
 
 
-
 }
-
-
-
-
-
-function backCases(){
-
-
-document.querySelector(".open-page").style.display="none";
-
-
-document.querySelector(".cases-page").style.display="block";
-
-
-}
-
 
 
 
@@ -330,18 +448,17 @@ function openReward(){
 
 let items=[
 
-"🪙 100 монет",
+"🪙100 монет",
 
-"💎 Редкий предмет",
+"💎Редкий предмет",
 
-"🔥 Легендарный скин",
+"🔥Легендарный скин",
 
-"⚡ Бустер",
+"⚡Бустер",
 
-"🎁 Новый кейс"
+"🎁Новый кейс"
 
 ];
-
 
 
 let result =
