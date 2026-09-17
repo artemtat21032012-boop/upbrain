@@ -10,33 +10,51 @@ body{
 
 margin:0;
 
+
 font-family:Arial, sans-serif;
 
 
 background:
+
 linear-gradient(
+
 180deg,
+
 #25163c,
+
 #0d101c
+
 );
 
 
 color:white;
 
 
+min-height:100vh;
+
+
 }
+
+
 
 
 
 .app{
 
+
 min-height:100vh;
 
+
 padding-bottom:80px;
+
 
 }
 
 
+
+
+
+/* ===== ВЕРХ ===== */
 
 
 .top{
@@ -44,7 +62,9 @@ padding-bottom:80px;
 
 display:flex;
 
+
 justify-content:space-between;
+
 
 align-items:center;
 
@@ -71,11 +91,18 @@ font-weight:800;
 
 background:#222b45;
 
+
 padding:12px 20px;
+
 
 border-radius:15px;
 
+
+font-weight:bold;
+
+
 }
+
 
 
 
@@ -91,10 +118,17 @@ padding:0 20px;
 
 
 
+
+
+
+/* ===== КЕЙСЫ ===== */
+
+
 .cases{
 
 
 display:grid;
+
 
 grid-template-columns:1fr 1fr;
 
@@ -106,6 +140,7 @@ padding:15px;
 
 
 }
+
 
 
 
@@ -140,7 +175,22 @@ justify-content:center;
 cursor:pointer;
 
 
+transition:.2s;
+
+
 }
+
+
+
+.case:active{
+
+
+transform:scale(.97);
+
+
+}
+
+
 
 
 
@@ -149,7 +199,9 @@ cursor:pointer;
 
 width:140px;
 
+
 height:110px;
+
 
 object-fit:contain;
 
@@ -158,13 +210,19 @@ object-fit:contain;
 
 
 
+
+
 .case h3{
+
 
 margin:5px;
 
+
 font-size:15px;
 
+
 }
+
 
 
 
@@ -195,10 +253,16 @@ font-weight:bold;
 
 
 
+
+
+/* ===== СТРАНИЦА ОТКРЫТИЯ ===== */
+
+
 .open-page{
 
 
 display:none;
+
 
 padding:15px;
 
@@ -207,6 +271,8 @@ text-align:center;
 
 
 }
+
+
 
 
 
@@ -240,17 +306,27 @@ font-weight:700;
 margin-bottom:25px;
 
 
+cursor:pointer;
+
+
 }
+
 
 
 
 
 .case-title{
 
+
 font-size:28px;
 
 
+padding:0;
+
+
 }
+
+
 
 
 
@@ -273,6 +349,7 @@ display:block;
 
 
 }
+
 
 
 
@@ -303,6 +380,7 @@ font-weight:bold;
 
 
 
+
 .open-button{
 
 
@@ -322,9 +400,13 @@ border-radius:16px;
 
 
 background:linear-gradient(
+
 90deg,
+
 #713cff,
+
 #a64dff
+
 );
 
 
@@ -337,7 +419,11 @@ font-size:18px;
 font-weight:800;
 
 
+cursor:pointer;
+
+
 }
+
 
 
 
@@ -363,6 +449,85 @@ padding:20px;
 
 
 
+
+
+
+
+/* ===== АПГРЕЙДЕР И ПРОФИЛЬ ===== */
+
+
+.upgrade-page,
+
+
+.profile-page{
+
+
+display:none;
+
+
+padding:20px;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+
+.upgrade-page h1,
+
+
+.profile-page h1{
+
+
+padding:0;
+
+
+}
+
+
+
+
+
+.empty-page{
+
+
+margin-top:40px;
+
+
+background:#151126;
+
+
+border-radius:18px;
+
+
+padding:40px 20px;
+
+
+color:#8c8fa8;
+
+
+font-size:18px;
+
+
+border:1px solid rgba(255,255,255,.08);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== НИЖНЕЕ МЕНЮ ===== */
 
 
 .bottom-menu{
@@ -398,7 +563,11 @@ align-items:center;
 border-top:1px solid rgba(255,255,255,.1);
 
 
+z-index:100;
+
+
 }
+
 
 
 
@@ -415,7 +584,12 @@ font-size:13px;
 color:#8c8fa8;
 
 
+cursor:pointer;
+
+
 }
+
+
 
 
 
@@ -425,7 +599,12 @@ color:#8c8fa8;
 display:block;
 
 
+margin-top:5px;
+
+
 }
+
+
 
 
 
@@ -434,5 +613,92 @@ display:block;
 
 color:white;
 
+
+}
+.page{
+
+display:none;
+
+}
+
+
+.cases-page{
+
+display:block;
+
+}
+
+
+
+.bottom-menu button{
+
+
+background:none;
+
+border:none;
+
+font-family:Arial,sans-serif;
+
+color:inherit;
+
+cursor:pointer;
+
+}
+
+
+
+.upgrade-page,
+.profile-page{
+
+text-align:center;
+
+padding:20px;
+
+}
+
+
+
+.empty-page{
+
+
+margin-top:40px;
+
+
+background:#151126;
+
+
+border-radius:18px;
+
+
+padding:40px 20px;
+
+
+color:#8c8fa8;
+
+
+} 
+.upgrade-page,
+.profile-page{
+
+display:none;
+
+padding:15px;
+
+}
+
+
+.empty-page{
+
+margin-top:40px;
+
+background:#151126;
+
+border-radius:18px;
+
+padding:40px 20px;
+
+text-align:center;
+
+color:#8c8fa8;
 
 }
