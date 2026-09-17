@@ -1,78 +1,24 @@
-console.log("BrainUp запущен");
-
-
-const caseData = {
-
-"Lucky Case":{
-img:"images/cases/lucky.png",
-price:49
-},
-
-"Crazy Case":{
-img:"images/cases/crazy.png",
-price:79
-},
-
-"Mystery Case":{
-img:"images/cases/mystery.png",
-price:99
-},
-
-"Rich Case":{
-img:"images/cases/rich.png",
-price:149
-},
-
-"Legend Case":{
-img:"images/cases/legend.png",
-price:249
-},
-
-"Guest Case":{
-img:"images/cases/guest.png",
-price:666
-},
-
-"God Case":{
-img:"images/cases/god.png",
-price:1000
-}
-
-};
+Telegram.WebApp.expand();
 
 
 
-function openCasePage(name){
+function hidePages(){
 
-console.log("Открываем:", name);
+document.querySelectorAll(".page").forEach(page=>{
 
+page.style.display="none";
 
-let data = caseData[name];
-
-
-document.querySelector(".cases-page").style.display="none";
-
-document.querySelector(".open-page").style.display="block";
-
-
-document.querySelector(".case-title").innerText=name;
-
-
-document.querySelector(".case-image").src=data.img;
-
-
-document.querySelector(".case-price").innerText=
-"🪙 Цена открытия: "+data.price;
-
-
+});
 
 }
 
 
 
-function backCases(){
 
-document.querySelector(".open-page").style.display="none";
+
+function goCases(){
+
+hidePages();
 
 document.querySelector(".cases-page").style.display="block";
 
@@ -81,26 +27,132 @@ document.querySelector(".cases-page").style.display="block";
 
 
 
+function goUpgrade(){
+
+hidePages();
+
+document.querySelector(".upgrade-page").style.display="block";
+
+}
+
+
+
+
+function goProfile(){
+
+hidePages();
+
+document.querySelector(".profile-page").style.display="block";
+
+}
+
+
+
+
+
+function openCasePage(name,image,price){
+
+
+hidePages();
+
+
+document.querySelector(".open-page").style.display="block";
+
+
+document.querySelector(".case-title").innerText=name;
+
+
+document.querySelector(".open-image").src=image;
+
+
+document.querySelector(".open-price").innerHTML=
+
+"🪙 Цена открытия: " + price;
+
+
+}
+
+
+
+
+
 function openReward(){
 
 
 let rewards=[
-"🔪 Нож",
-"💎 Алмаз",
-"🪙 500 монет",
-"⭐ Редкий предмет"
+
+"🪙 100 монет",
+
+"💎 Редкий предмет",
+
+"🔥 Легендарный скин",
+
+"⚡ Бустер",
+
+"🎁 Новый кейс"
+
 ];
 
 
-let random =
+let win =
 rewards[Math.floor(Math.random()*rewards.length)];
 
 
-document.querySelector(".result").innerHTML=
-`
-🎉 Выпало:
 
-${random}
+document.querySelector(".result").innerHTML=
+
+`
+<h2>🎉 Выпало:</h2>
+<h2>${win}</h2>
 `;
+
+
+
+}
+function hideAllPages(){
+
+document.querySelector(".cases-page").style.display="none";
+
+document.querySelector(".open-page").style.display="none";
+
+document.querySelector(".upgrade-page").style.display="none";
+
+document.querySelector(".profile-page").style.display="none";
+
+}
+
+
+
+
+
+function goCases(){
+
+hideAllPages();
+
+document.querySelector(".cases-page").style.display="block";
+
+}
+
+
+
+
+
+function goUpgrade(){
+
+hideAllPages();
+
+document.querySelector(".upgrade-page").style.display="block";
+
+}
+
+
+
+
+
+function goProfile(){
+
+hideAllPages();
+
+document.querySelector(".profile-page").style.display="block";
 
 }
