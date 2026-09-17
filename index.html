@@ -21,6 +21,7 @@
 <div class="app">
 
 
+
 <!-- ================= КЕЙСЫ ================= -->
 
 
@@ -29,14 +30,16 @@
 
 <div class="top">
 
+
 <div class="logo">
 🧠 BrainUp
 </div>
 
 
 <div class="coins">
-🪙 500
+🪙 <span id="coins">500</span>
 </div>
+
 
 </div>
 
@@ -45,6 +48,7 @@
 <h1>
 🎁 Кейсы
 </h1>
+
 
 
 
@@ -63,6 +67,7 @@
 </div>
 
 </div>
+
 
 
 
@@ -161,19 +166,20 @@
 
 
 
-</div>
-
 
 </div>
 
 
+</div>
 
 
 
 
 
 
-<!-- ================= ОТКРЫТИЕ КЕЙСА ================= -->
+
+
+<!-- ================= ОТКРЫТИЕ ================= -->
 
 
 <div class="open-page">
@@ -181,7 +187,7 @@
 
 <button class="back-btn" onclick="goCases()">
 
-← Вернуться к кейсам
+← Назад
 
 </button>
 
@@ -191,11 +197,15 @@
 
 
 
+
 <img class="open-image">
 
 
 
+
+
 <div class="open-price"></div>
+
 
 
 
@@ -208,9 +218,9 @@
 
 
 
-<div class="result">
 
-</div>
+<div class="result"></div>
+
 
 
 </div>
@@ -227,21 +237,6 @@
 
 
 <div class="upgrade-page">
-
-
-<div class="top">
-
-<div class="logo">
-🧠 BrainUp
-</div>
-
-
-<div class="coins">
-🪙500
-</div>
-
-</div>
-
 
 
 <h1>
@@ -272,29 +267,49 @@
 <div class="profile-page">
 
 
-<div class="top">
-
-<div class="logo">
-🧠 BrainUp
-</div>
-
-
-<div class="coins">
-🪙500
-</div>
-
-</div>
-
-
-
 <h1>
 👤 Профиль
 </h1>
 
 
-<div class="empty-page">
 
-Скоро здесь будет профиль 👤
+<div class="profile-info">
+
+
+<h2>
+🪙 Монеты:
+</h2>
+
+<h2 id="profileCoins">
+500
+</h2>
+
+
+
+<h2>
+📦 Открыто кейсов:
+</h2>
+
+<h2 id="casesOpened">
+0
+</h2>
+
+
+
+
+<h2>
+🎒 Инвентарь:
+</h2>
+
+
+
+<div id="inventory">
+
+Пусто
+
+</div>
+
+
 
 </div>
 
@@ -308,13 +323,14 @@
 
 
 
-<!-- ================= НИЖНЕЕ МЕНЮ ================= -->
+
+<!-- ================= МЕНЮ ================= -->
 
 
 <div class="bottom-menu">
 
 
-<div class="menu active" onclick="goCases()">
+<button class="menu active" onclick="goCases()">
 
 🎁
 
@@ -322,11 +338,12 @@
 Кейсы
 </span>
 
-</div>
+</button>
 
 
 
-<div class="menu" onclick="goUpgrade()">
+
+<button class="menu" onclick="goUpgrade()">
 
 ⚡
 
@@ -334,12 +351,12 @@
 Апгрейдер
 </span>
 
-</div>
+</button>
 
 
 
 
-<div class="menu" onclick="goProfile()">
+<button class="menu" onclick="goProfile()">
 
 👤
 
@@ -347,7 +364,7 @@
 Профиль
 </span>
 
-</div>
+</button>
 
 
 
@@ -356,131 +373,13 @@
 
 
 
-
 </div>
 
 
 
 
 
-
-<script>
-
-
-Telegram.WebApp.expand();
-
-
-
-function hideAll(){
-
-
-document.querySelector(".cases-page").style.display="none";
-
-document.querySelector(".open-page").style.display="none";
-
-document.querySelector(".upgrade-page").style.display="none";
-
-document.querySelector(".profile-page").style.display="none";
-
-
-}
-
-
-
-function goCases(){
-
-hideAll();
-
-document.querySelector(".cases-page").style.display="block";
-
-}
-
-
-
-function goUpgrade(){
-
-hideAll();
-
-document.querySelector(".upgrade-page").style.display="block";
-
-}
-
-
-
-function goProfile(){
-
-hideAll();
-
-document.querySelector(".profile-page").style.display="block";
-
-}
-
-
-
-
-function openCasePage(name,image,price){
-
-
-hideAll();
-
-
-document.querySelector(".open-page").style.display="block";
-
-
-document.querySelector(".case-title").innerText=name;
-
-
-document.querySelector(".open-image").src=image;
-
-
-document.querySelector(".open-price").innerHTML=
-
-"🪙 Цена открытия: "+price;
-
-
-}
-
-
-
-
-function openReward(){
-
-
-let items=[
-
-"🪙100 монет",
-
-"💎Редкий предмет",
-
-"🔥Легендарный скин",
-
-"⚡Бустер",
-
-"🎁Новый кейс"
-
-];
-
-
-let result =
-items[Math.floor(Math.random()*items.length)];
-
-
-
-document.querySelector(".result").innerHTML=
-
-`
-<h2>🎉 Выпало:</h2>
-<h2>${result}</h2>
-`;
-
-
-
-}
-
-
-
-</script>
-
+<script src="script.js"></script>
 
 
 </body>
